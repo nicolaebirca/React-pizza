@@ -1,0 +1,112 @@
+[
+    {
+      "id": 0,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11ee7d612fc7b7fca5be822752bee1e5.avif",
+      "title": "Margherita Suprema",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 8.99,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11ee7d610d2925109ab2e1c92cc5383c.avif",
+      "title": "Pepperoni Explosion",
+      "types": [0],
+      "sizes": [26, 40],
+      "price": 7.99,
+      "category": 0,
+      "rating": 6
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11ee7d610e8bbb248f31270be742b4bd.avif",
+      "title": "Mamma Mia",
+      "types": [0],
+      "sizes": [26, 40],
+      "price": 6.99,
+      "category": 1,
+      "rating": 4
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11ee7d6149eb101d8727573088fa2eff.avif",
+      "title": "Quattro Formaggi",
+      "types": [1],
+      "sizes": [26, 30, 40],
+      "price": 5.99,
+      "category": 2,
+      "rating": 2
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11ee7d6150d498419e133df19945a00d.avif",
+      "title": "Hawaiian Paradise",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 5.69,
+      "category": 3,
+      "rating": 8
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11ee7d61546d8483a61a0bbaa7adcc78.avif",
+      "title": "BBQ Chicken Feast",
+      "types": [0],
+      "sizes": [30, 40],
+      "price": 9.69,
+      "category": 2,
+      "rating": 2
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11ef8537f2244e8caeb7c69e644d0537.avif",
+      "title": "Capricciosa Classic",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 8.49,
+      "category": 1,
+      "rating": 9
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11ee7d6105ef6690b86fbde6150b5b0c.avif",
+      "title": "Mushroom Truffle",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 8.39,
+      "category": 4,
+      "rating": 10
+    },
+    {
+      "id": 8,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11ef4feddf588b4ea7493ba40fdf934c.avif",
+      "title": "Diavola Inferno",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 5.89,
+      "category": 5,
+      "rating": 10
+    },
+    {
+      "id": 9,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11ee7d61698827ee9b8db6d0aec53410.avif",
+      "title": "Vegetariana Deluxe 🌱",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 9.59,
+      "category": 5,
+      "rating": 7
+    },
+    {
+      "id": 10,
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11ee7d6108e3a1c9952cd3a7f39a4d02.avif",
+      "title": "Chicken Feast",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 7.79,
+      "category": 5,
+      "rating": 7
+    }
+  ]
