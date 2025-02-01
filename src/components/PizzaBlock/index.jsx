@@ -23,7 +23,7 @@ function PizzaBlock({ title, imageUrl, price, sizes, types }) {
                   className={activeType === typeId ? 'active' : ''}>
                     {typeNames[typeId]}
                     </li>
-                  ))};
+                  ))}
                 </ul>
                 <ul>
                   {sizes.map((size, i) => 
