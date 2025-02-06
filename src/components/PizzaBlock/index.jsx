@@ -7,7 +7,8 @@ function PizzaBlock({ title, imageUrl, price, sizes, types }) {
   const typeNames = ['thin', 'traditional'];
   
     return (
-        <div className="pizza-block">
+        <div className="pizza-block-wrapper">
+          <div className="pizza-block">
               <img
                 className="pizza-block__image"
                 src={imageUrl}
@@ -52,10 +53,11 @@ function PizzaBlock({ title, imageUrl, price, sizes, types }) {
                     />
                   </svg>
                   <span>Add</span>
-                  <i>2</i>
+                  <i>1</i>
                 </button>
               </div>
             </div>
+        </div>
     )
 }
 export default PizzaBlock;
