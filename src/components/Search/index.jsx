@@ -3,6 +3,7 @@ import debounce from 'lodash.debounce'
 import { SearchContext } from '../../App';
 
 import styles from './Search.module.scss'
+import { setCurrentPage } from '../../redux/slices/filterSlice';
 
 const Search = () => {
   const [value, setValue] = React.useState('');
@@ -11,21 +12,23 @@ const Search = () => {
 
 
   const onClickClear = () => {
+    setValue('');
     setSearchValue('');
     inputRef.current.focus();
   }
 
-  const updateSearchValue = React.useCallback(
-    debounce((str) => {
-      setSearchValue(str);
-      setValue('');
-    }, 1000),
-    [],
+  const updateSearchValue = React.useMemo(
+    () =>
+      debounce((str) => {
+        setSearchValue(str);
+      }, 1000),
+    [setSearchValue]
   );
 
   const onChangeInput = (event) => {
     setValue(event.target.value);
     updateSearchValue(event.target.value);
+    setCurrentPage(1);
   }
 
 
