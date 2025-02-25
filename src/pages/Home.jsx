@@ -5,17 +5,18 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import {
+  selectFilter,
   setCategoryId,
   setCurrentPage,
   setFilters,
 } from "../redux/slices/filterSlice";
-import { fetchPizzas } from "../redux/slices/pizzasSlice";
+import { fetchPizzas, selectPizzaData } from "../redux/slices/pizzasSlice";
 import Categories from "../components/Categories";
 import Sort, { sortList } from "../components/Sort";
 import Skeleton from "../components/PizzaBlock/Skeleton";
 import PizzaBlock from "../components/PizzaBlock";
 import Pagination from "../components/Pagination";
-import { SearchContext } from "../App";
+
 
 const Home = () => {
   const navigate = useNavigate();
@@ -23,12 +24,9 @@ const Home = () => {
   const isSearch = React.useRef(false);
   const isMounted = React.useRef(false);
 
-  const { items, status } = useSelector((state) => state.pizza);
-  const { categoryId, sort, currentPage } = useSelector(
-    (state) => state.filter
-  );
+  const { items, status } = useSelector(selectPizzaData);
+  const { categoryId, sort, currentPage, searchValue } = useSelector(selectFilter);
 
-  const { searchValue } = React.useContext(SearchContext);
 
   const onChangeCategory = (id) => {
     dispatch(setCategoryId(id));
@@ -114,7 +112,10 @@ const Home = () => {
       {status === "error" ? (
         <div className="content__error-info">
           <h2>An error has occurred. 😕</h2>
-          <p>Unfortunately, the pizzas could not be retrieved. Please try making the request again later.</p>
+          <p>
+            Unfortunately, the pizzas could not be retrieved. Please try making
+            the request again later.
+          </p>
         </div>
       ) : (
         <div className="content__items">

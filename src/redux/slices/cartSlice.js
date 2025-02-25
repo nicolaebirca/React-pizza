@@ -34,10 +34,10 @@ const cartSlice = createSlice({
       }
     },
     removeItem: (state, action) => {
-      state.items = state.items.filter(item => item.id !== action.payload);  // Asigură-te că item este un obiect și filter este folosit pe un array
+      state.items = state.items.filter((item) => item.id !== action.payload); // Asigură-te că item este un obiect și filter este folosit pe un array
       state.totalPrice = state.items
-          .reduce((sum, obj) => obj.price * obj.count + sum, 0)
-          .toFixed(2);
+        .reduce((sum, obj) => obj.price * obj.count + sum, 0)
+        .toFixed(2);
     },
     clearItems(state) {
       state.items = [];
@@ -45,6 +45,10 @@ const cartSlice = createSlice({
     },
   },
 });
+export const selectCartItemById = (id) => (state) =>
+  state.cart.items.find((obj) => obj.id === id);
+
+export const selectCart = (state) => state.cart;
 
 export const { addItem, removeItem, minusItem, clearItems } = cartSlice.actions;
 
