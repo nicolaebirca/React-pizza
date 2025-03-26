@@ -9,12 +9,12 @@ function Header() {
   const { items, totalPrice } = useSelector(selectCart);
   const location = useLocation();
 
-  const totalCount = items.reduce((sum, item) => sum + item.count, 0);
+  const totalCount = items.reduce((sum: number, item: { count: number}) => sum + item.count, 0);
 
   return (
     <div className="header">
       <div className="container">
-        <Link to="/" onClick={() => (window.location.href = "/")}>
+        <Link to="/" >
           <div className="header__logo">
             <img width="38" src={logoSvg} alt="Pizza logo" />
             <div>
