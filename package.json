@@ -19,8 +19,7 @@
     "react-redux": "^9.2.0",
     "react-router-dom": "^6.29.0",
     "react-scripts": "5.0.1",
-    "sass": "^1.83.4",
-    "typescript": "^5.8.2"
+    "sass": "^1.83.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -50,5 +49,9 @@
   "main": "index.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/lodash.debounce": "^4.0.9",
+    "typescript": "^4.9.5"
+  }
 }
