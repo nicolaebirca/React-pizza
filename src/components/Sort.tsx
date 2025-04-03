@@ -4,16 +4,16 @@ import { selectSort, setSort } from "../redux/slices/filterSlice";
 
 type SortItem = {
   name: string;
-  sortProperty: string;
+  sortProperty: "rating" | "popularity";
 }
 
 export const sortList: SortItem[] = [
-  { name: "popularity (DESC)", sortProperty: "rating" },
-  { name: "popularity (ASC)", sortProperty: "-rating" },
-  { name: "price(DESC)", sortProperty: "price" },
-  { name: "price(ASC)", sortProperty: "-price" },
-  { name: "alphabet(DESC)", sortProperty: "title" },
-  { name: "alphabet(ASC)", sortProperty: "-title" },
+  { name: "popularity (DESC)", sortProperty: "popularity" },
+  { name: "popularity (ASC)", sortProperty: "popularity" },
+  { name: "price(DESC)", sortProperty: "popularity" },
+  { name: "price(ASC)", sortProperty: "popularity" },
+  { name: "alphabet(DESC)", sortProperty: "popularity" },
+  { name: "alphabet(ASC)", sortProperty: "popularity" },
 ];
 function Sort() {
   const dispatch = useDispatch();
@@ -30,15 +30,16 @@ function Sort() {
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const _event = event as MouseEvent & {
-        path: Node[];
+        composedPath: () => Node[];
       };
       
-      if (sortRef.current && !_event.path.includes(sortRef.current)) {
+      if (sortRef.current && !_event.composedPath().includes(sortRef.current)) {
         setOpen(false);
       }
     };
+  
     document.body.addEventListener("click", handleClickOutside);
-
+  
     return () => document.body.removeEventListener("click", handleClickOutside);
   }, []);
 
