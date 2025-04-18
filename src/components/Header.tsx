@@ -1,3 +1,4 @@
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -10,6 +11,11 @@ function Header() {
   const location = useLocation();
 
   const totalCount = items.reduce((sum: number, item: { count: number}) => sum + item.count, 0);
+
+  React.useEffect(() => {
+    const json = JSON.stringify(items);
+    localStorage.setItem('cart', json);
+  }, [items])
 
   return (
     <div className="header">

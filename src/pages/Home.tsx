@@ -1,37 +1,35 @@
 import React from "react";
-import qs from "qs";
 
 
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 import {
   selectFilter,
   setCategoryId,
   setCurrentPage,
-  setFilters,
 } from "../redux/slices/filterSlice";
 
 import { fetchPizzas, selectPizzaData } from "../redux/slices/pizzasSlice";
 import Categories from "../components/Categories";
-import Sort, { sortList } from "../components/Sort";
+import Sort from "../components/Sort";
 import Skeleton from "../components/PizzaBlock/Skeleton";
 import PizzaBlock from "../components/PizzaBlock";
 import Pagination from "../components/Pagination";
 
 const Home: React.FC = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const dispatch = useDispatch();
-  const isSearch = React.useRef(false);
-  const isMounted = React.useRef(false);
+  // const isSearch = React.useRef(false);
+  // const isMounted = React.useRef(false);
 
   const { items, status } = useSelector(selectPizzaData);
   const { categoryId, sort, currentPage, searchValue } =
     useSelector(selectFilter);
 
-  const onChangeCategory = (idx: number) => {
+  const onChangeCategory = React.useCallback((idx: number) => {
     dispatch(setCategoryId(idx));
-  };
+  }, []);
 
   const onChangePage = (page: number) => {
     dispatch(setCurrentPage(page));
@@ -83,7 +81,7 @@ const Home: React.FC = () => {
 
   React.useEffect(() => {
     getPizzas();
-  }, [categoryId, sort.sortProperty, searchValue, currentPage]);
+  }, [categoryId, sort.sortProperty, searchValue, currentPage, getPizzas]);
 
   // React.useEffect(() => {
   //   if (isMounted.current && categoryId !== 0) {
@@ -110,7 +108,7 @@ const Home: React.FC = () => {
     })
     .map((obj: any) => (
       
-        <PizzaBlock {...obj} />
+        <PizzaBlock key={obj.id} {...obj} />
      
     ));
 
